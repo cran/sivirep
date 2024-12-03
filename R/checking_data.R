@@ -907,13 +907,15 @@ agrupar_per_etn <- function(data_event, cols_etn = "per_etn",
 #' data_limpia <- limpiar_data_sivigila(data_event = dengue2020)
 #' # Cálculo de la incidencia con proyecciones poblacionales por departamento
 #' data_agrupada_mpios <- agrupar_mpio(data_limpia, dpto = "Antioquia")
-#' calcular_incidencia(
-#'   data_agrupada = data_agrupada_mpios,
-#'   poblacion = "proyecciones",
-#'   dpto = "05",
-#'   year = 2020,
-#'   cache = TRUE
-#' )
+#' if (interactive()) {
+#'   calcular_incidencia(
+#'     data_agrupada = data_agrupada_mpios,
+#'     poblacion = "proyecciones",
+#'     dpto = "05",
+#'     year = 2020,
+#'     cache = TRUE
+#'   )
+#' }
 #' # Cálculo de la incidencia con proyecciones poblacionales por municipio
 #' calcular_incidencia(
 #'   data_agrupada = data_agrupada_mpios,
@@ -929,7 +931,7 @@ agrupar_per_etn <- function(data_event, cols_etn = "per_etn",
 #'   poblacion = "riesgo",
 #'   data_agrupada = data_agrupada_dptos,
 #'   year = 2020,
-#'   cache = TRUE
+#'   ruta_dir = tempdir()
 #' )
 #' }
 #' @export
@@ -1068,12 +1070,14 @@ calcular_incidencia <- function(data_incidencia = NULL,
 #' data_limpia <- limpiar_data_sivigila(data_event = dengue2020)
 #' data_agrupada_mpios <- agrupar_mpio(data_limpia, dpto = "Antioquia")
 #' # Cálculo de la incidencia con población a riesgo por departamento
-#' calcular_incidencia_geo(
-#'   poblacion = "riesgo",
-#'   data_agrupada = data_agrupada_mpios,
-#'   year = 2020,
-#'   cache = TRUE
-#' )
+#' if (interactive()) {
+#'   calcular_incidencia_geo(
+#'     poblacion = "riesgo",
+#'     data_agrupada = data_agrupada_mpios,
+#'     year = 2020,
+#'     cache = TRUE
+#'   )
+#' }
 #' data_agrupada_dptos <- agrupar_dpto(data_limpia)
 #' # Cálculo de la incidencia con proyecciones poblacionales para Colombia
 #' calcular_incidencia_geo(
@@ -1219,12 +1223,14 @@ calcular_incidencia_geo <- function(data_incidencia = NULL,
 #'   dpto = "05"
 #' )
 #' data_agrupada <- agrupar_sex(data_filtrada)
-#' calcular_incidencia_sex(
-#'   data_agrupada = data_agrupada,
-#'   dpto = "05",
-#'   year = 2020,
-#'   cache = TRUE
-#' )
+#' if (interactive()) {
+#'   calcular_incidencia_sex(
+#'     data_agrupada = data_agrupada,
+#'     dpto = "05",
+#'     year = 2020,
+#'     cache = TRUE
+#'   )
+#' }
 #' #' Cálculo de la incidencia con proyecciones poblacionales por sexo y
 #' # municipio
 #' data_filtrada <- geo_filtro(

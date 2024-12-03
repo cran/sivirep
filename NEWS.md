@@ -72,9 +72,22 @@ Functions to generate and plot the distribution of cases by geographic area, inc
 
 ## Report template:
 
-The report template `Reporte Basico` now includes five new sections called:
+The report template `Reporte Evento` now includes five new sections called:
 -   `Distribución de casos` 
 -   `Distribución de casos por clasificación`
 -   `Distribución por área geográfica`
 -   `Distribución por pertenencia étnica` 
 -   `Incidencia`
+
+# sivirep 1.0.1
+
+This patch release fixes the following items::
+
+-   `es_ES` was replaced with `es-ES` in the `DESCRIPTION` file.
+  
+-   Updated function examples that require data import and 
+    use the `cache` parameter to prevent an increase in the package's size 
+    on CRAN.
+    
+-   Rename the report template `Reporte Basico` to `Reporte Evento`
+
